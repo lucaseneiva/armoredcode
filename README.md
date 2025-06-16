@@ -1,166 +1,154 @@
+
+---
+
 # ArmoredCode
 
-## O Problema
+<div align="center">
+  <img src="https://raw.githubusercontent.com/lucaseneiva/armoredcode/main/client/src/assets/images/logo_branca_sfundo.png" alt="ArmoredCode Logo" width="150"/>
+  <p><strong>Conectando talentos de desenvolvimento e empresas em Sorocaba.</strong></p>
+</div>
 
-Empresas de Sorocaba, especialmente as menores ou startups, muitas vezes têm dificuldades para encontrar desenvolvedores de software qualificados na região. Ao mesmo tempo, estudantes e recém-formados que buscam entrar na indústria de tecnologia enfrentam desafios para adquirir experiência prática e se conectar com potenciais empregadores.
+<div align="center">
+  <img src="https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white" alt="Angular">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js">
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js">
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
+  <img src="https://img.shields.io/badge/License-GPLv3-blue.svg?style=for-the-badge" alt="License GPL v3">
+</div>
 
-## A Solução
+---
 
-O ArmoredCode resolve esse problema fornecendo uma plataforma feita sob medida para a região de Sorocaba. Nós conectamos empresas a talentos locais de desenvolvimento de software, com foco na criação de oportunidades para que estudantes e recém-formados desenvolvam suas habilidades e portfólios.
+## 🚀 O Projeto
 
-## Público-Alvo
+**ArmoredCode** é uma plataforma de freelancing projetada para resolver um desafio local: a dificuldade que empresas de Sorocaba, especialmente startups e PMEs, enfrentam para encontrar desenvolvedores de software qualificados na região. Ao mesmo tempo, a plataforma serve como uma ponte para estudantes e recém-formados em tecnologia, oferecendo um espaço para adquirir experiência prática, construir um portfólio robusto e se conectar com o mercado de trabalho local.
 
-**Freelancers:**
+## ✨ Funcionalidades Principais
 
-- Estudantes de Ciência da Computação, Engenharia de Software e áreas relacionadas.
-- Recém-formados em busca de vagas de nível inicial em desenvolvimento de software.
-- Desenvolvedores autodidatas que buscam expandir sua rede profissional.
-- Desenvolvedores experientes à procura de projetos freelance na região de Sorocaba.
+-   👥 **Perfis Duplos:** Cadastro e perfis distintos para **Clientes** (empresas) e **Freelancers** (desenvolvedores).
+-   📂 **Gestão de Projetos:** Clientes podem postar projetos com descrições detalhadas, escopo, orçamento e habilidades necessárias.
+-   🔍 **Busca Inteligente:** Ferramenta de busca poderosa para clientes encontrarem freelancers por habilidades e especializações, e para freelancers encontrarem projetos.
+-   📝 **Sistema de Propostas:** Freelancers podem enviar propostas detalhadas para os projetos, incluindo abordagem técnica, prazos e valores.
+-   💬 **Comunicação Integrada:** Um canal de chat dedicado para cada projeto, facilitando a comunicação entre cliente e freelancer desde a proposta até a conclusão.
+-   📨 **Convites Diretos:** Clientes podem convidar freelancers específicos para avaliar seus projetos e enviar uma proposta.
+-   ⭐ **Sistema de Avaliação:** Mecanismo de feedback e avaliação mútua (cliente e freelancer) após a conclusão de um projeto.
 
-**Clientes:**
+## 🏗️ Arquitetura
 
-- Startups e pequenas empresas que precisam de expertise em desenvolvimento de software.
-- Empresas estabelecidas buscando recursos adicionais de desenvolvimento.
-- Organizações com projetos adequados para estudantes ou estagiários.
-- Qualquer pessoa em Sorocaba com uma necessidade de desenvolvimento de software.
+O projeto segue uma arquitetura moderna de aplicação web, separando claramente as responsabilidades entre o frontend e o backend.
 
-## Como Funciona o ArmoredCode
+```mermaid
+graph TD
+    subgraph "Navegador do Usuário"
+        User["Usuário (Cliente/Freelancer)"]
+    end
 
-- Clientes podem postar descrições detalhadas de projetos, destacando escopo, orçamento e habilidades necessárias.
-- Freelancers exibem suas habilidades, formação, experiência e portfólio de trabalhos.
-- Uma ferramenta de busca poderosa permite que clientes encontrem freelancers adequados com base em critérios específicos.
-- Freelancers podem enviar propostas para projetos, detalhando sua abordagem e valores.
+    subgraph "Infraestrutura ArmoredCode"
+        Frontend["Client (Angular)<br>Interface Web"]
+        Backend["API (Node.js/Express)<br>Lógica de Negócio"]
+        Database[("Database (MongoDB)<br>Persistência de Dados")]
+    end
 
-## Definição do MVP (Minimum Viable Product)
+    User -- "Interage via HTTPS" --> Frontend
+    Frontend -- "Chama API RESTful via HTTP" --> Backend
+    Backend -- "Lê e Escreve Dados" --> Database
+```
 
-### 1. Cadastro e Autenticação de Usuários
-- Registro de freelancers e clientes
-- Login e autenticação usando JWT (JSON Web Tokens)
-- Perfis de usuário com informações relevantes
+## 🛠️ Tecnologias Utilizadas
 
-### 2. Projetos
-- Criação de projetos pelos clientes
-- Visualização de detalhes do projeto
-- Listagem de projetos disponíveis
+| Camada    | Tecnologia                                                                                             |
+| :-------- | :----------------------------------------------------------------------------------------------------- |
+| **Frontend** | `Angular`, `TypeScript`, `TailwindCSS`                                                                 |
+| **Backend**  | `Node.js`, `Express.js`, `Mongoose`                                                                    |
+| **Banco de Dados** | `MongoDB`                                                                                              |
+| **Autenticação** | `JWT (JSON Web Tokens)`                                                                                |
 
-### 3. Sistema de Busca
-- Busca de projetos pelos freelancers
-- Busca de perfis de freelancers pelos clientes
-- Filtros básicos para refinar as buscas
+## 🏁 Como Rodar o Projeto Localmente
 
-### 4. Sistema de Propostas
-- Freelancers podem enviar propostas para projetos
-- Cada proposta inclui: valor proposto, prazo estimado e descrição do plano de trabalho
-- Cliente podem vizualizar as propostas por projeto
-- Clientes podem aceitar ou recusar propostas
-- Ao recusar uma proposta o cliente deve escrever o motivo
+Siga os passos abaixo para configurar e executar o ambiente de desenvolvimento.
 
-### 5. Comunicação
-- Canal de comunicação único para cada proposta
-- Troca de mensagens entre cliente e freelancer
-- O canal permanece ativo se a proposta for aceita, permitindo comunicação durante o projeto
-- Canais de propostas recusadas são marcados como inativos, mas permanecem acessíveis para referência
+### Pré-requisitos
 
-### 6. Convites para Proposta
-- Clientes podem enviar "convites para proposta" a freelancers específicos
-- Freelancers recebem notificações de convites e podem optar por enviar uma proposta
+-   **Node.js e npm:** [https://nodejs.org/](https://nodejs.org/)
+-   **Yarn:** `npm install -g yarn`
+-   **MongoDB:** É necessário ter uma instância do MongoDB em execução (localmente ou na nuvem, como o MongoDB Atlas).
 
-### Modelos de Dados Principais
-1. Usuário (com subtipos Cliente e Freelancer)
-2. Projeto
-3. Proposta
-4. Mensagem
-5. Convite para Proposta
+### Instalação
 
-### APIs Principais (Backend)
-- Autenticação: registro, login
-- Projetos: CRUD, listagem, busca
-- Propostas: criação, edição, aceitação/recusa, listagem
-- Mensagens: criação, listagem por proposta
-- Convites: criação, listagem, aceitação/recusa
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/lucaseneiva/armoredcode.git
+    cd armoredcode
+    ```
 
-### Principais Telas e Componentes (Frontend)
-1. Autenticação
-   - Tela de Login
-   - Tela de Registro (com opção para escolher entre Cliente e Freelancer)
+2.  **Instale todas as dependências** (isso instalará para o `client` e `api`):
+    ```bash
+    yarn install
+    ```
 
-2. Perfil de Usuário
-   - Visualização de Perfil
-   - Edição de Perfil
+### Configuração do Backend
 
-3. Projetos
-   - Lista de Projetos (com filtros de busca)
-   - Detalhes do Projeto
-   - Formulário de Criação/Edição de Projeto (para Clientes)
+1.  Navegue até a pasta da API:
+    ```bash
+    cd api
+    ```
 
-4. Propostas
-   - Lista de Propostas (para um projeto específico)
-   - Detalhes da Proposta
-   - Formulário de Criação de Proposta (para Freelancers)
+2.  Crie um arquivo `.env` na raiz da pasta `api` e adicione as seguintes variáveis, substituindo os valores:
+    ```env
+    # String de conexão do seu banco de dados MongoDB
+    MONGO_URL=<sua_string_de_conexao_do_mongodb> 
+    
+    # Chave secreta para gerar os tokens JWT
+    JWT_SECRET=<sua_chave_secreta_jwt> 
+    
+    # URL do frontend (para CORS e links de e-mail)
+    LIVE_URL=http://localhost:4200 
+    ```
 
-5. Comunicação
-   - Interface de Chat (para cada proposta)
-   - Lista de Conversas Ativas
+### Execução
 
-6. Busca
-   - Interface de Busca de Projetos (para Freelancers)
-   - Interface de Busca de Freelancers (para Clientes)
+Você precisará de dois terminais abertos.
 
-7. Convites
-   - Interface para Envio de Convites (para Clientes)
-   - Lista de Convites Recebidos (para Freelancers)
+1.  **Terminal 1: Iniciar o Backend (API)**
+    A partir da raiz do projeto (`armoredcode/`), execute:
+    ```bash
+    yarn workspace api start
+    ```
+    O servidor da API será iniciado em `http://localhost:8800`. Ao iniciar, ele também irá popular o banco de dados com dados de teste (fixtures).
 
-8. Dashboard
-   - Visão geral para Clientes (projetos ativos, propostas recebidas)
-   - Visão geral para Freelancers (projetos em andamento, propostas enviadas)
+2.  **Terminal 2: Iniciar o Frontend (Client)**
+    A partir da raiz do projeto (`armoredcode/`), execute:
+    ```bash
+    yarn workspace client start
+    ```
+    A aplicação Angular estará acessível em `http://localhost:4200`.
 
-### Considerações Técnicas
-- Backend: Node.js com Express.js
-- Banco de Dados: MongoDB com Mongoose para ODM
-- Autenticação: JWT (JSON Web Tokens)
-- Frontend: Angular
-  - Componentes reutilizáveis para elementos comuns (ex: cards de projeto, formulários)
-  - Serviços para comunicação com a API backend
-  - Roteamento para navegação entre diferentes telas
-- API RESTful com operações CRUD básicas
-- Testes manuais utilizando Thunder Client para o backend
+## 📂 Estrutura de Pastas
 
-##  Instruções para Rodar o Projeto
+O repositório está organizado em um monorepo com as seguintes pastas principais:
 
-### Pré-requisitos:
+```
+└── armoredcode/
+    ├── api/          # Contém todo o código do backend (Node.js/Express)
+    │   ├── controllers/
+    │   ├── models/
+    │   ├── routes/
+    │   ├── fixtures/   # Dados para popular o banco de dados
+    │   └── ...
+    ├── client/       # Contém todo o código do frontend (Angular)
+    │   ├── src/
+    │   │   ├── app/
+    │   │   │   ├── components/
+    │   │   │   ├── pages/
+    │   │   │   └── services/
+    │   └── ...
+    ├── docs/         # Documentação do projeto (diagramas, exemplos)
+    └── README.md     # Este arquivo
+```
 
-- **Node.js e npm:** Certifique-se de ter o Node.js e o npm instalados em sua máquina. Você pode baixá-los em [https://nodejs.org/](https://nodejs.org/).
-- **Yarn:** É recomendado usar o Yarn como gerenciador de pacotes para este projeto. Instale-o globalmente usando o comando `npm install -g yarn`.
-- **MongoDB:** Tenha o MongoDB instalado e em execução. Você pode baixá-lo em [https://www.mongodb.com/](https://www.mongodb.com/).
+## 🤝 Contribuições
 
-### Configuração do Projeto:
+Contribuições são bem-vindas! Se você deseja ajudar a melhorar o ArmoredCode, sinta-se à vontade para abrir uma *issue* para discutir novas funcionalidades ou reportar bugs. Pull requests também são muito bem-vindos.
 
-1. **Clonar o Repositório:**
-   ```bash
-   git clone https://github.com/lucas/armoredcode.git
-   ```
-2. **Instalar as Dependências:**
-   ```bash
-   yarn install
-   ```
-3. **Configurar Variáveis de Ambiente:**
-   - Criar um arquivo `.env` dentro da pasta `api` com o seguinte conteúdo, substituindo os valores entre `< >` pelas suas informações:
-   ```
-   MONGO_URL=<sua_string_de_conexao_do_mongodb> 
-   JWT_SECRET=<sua_chave_secreta_jwt> 
-   LIVE_URL=<url_do_seu_frontend> 
-   ```
-4. **Iniciar o Servidor:**
-   ```bash
-   yarn start 
-   ```
-   Isso iniciará o servidor backend.
-5. **Iniciar o Frontend (Angular):**
-   ```bash
-   cd cliente 
-   yarn start 
-   ```
-   Isso iniciará o servidor de desenvolvimento do Angular.
+## 📄 Licença
 
-   Agora você pode acessar o aplicativo em seu navegador, geralmente em `http://localhost:4200/`. 
-
+Este projeto está licenciado sob a **GNU General Public License v3.0**. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
